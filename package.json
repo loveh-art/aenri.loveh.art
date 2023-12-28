@@ -33,6 +33,7 @@
   "dependencies": {
     "@catppuccin/palette": "^0.2.0",
     "@emotion/css": "^11.11.2",
+    "@sveltejs/adapter-cloudflare": "^3.0.1",
     "sass": "^1.69.5"
   }
 }
