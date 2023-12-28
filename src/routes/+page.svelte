@@ -1,2 +1,15 @@
-<h1>Welcome to SvelteKit</h1>
-<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
+<script>
+	import { onMount } from "svelte";
+	import CatppuccinTabber from "../components/CatppuccinTabber.svelte";
+    import PageHost from "../components/PageHost.svelte";
+	import ProfileCard from "../components/ProfileCard.svelte";
+
+    let isMobile = false;
+
+
+</script>
+
+<PageHost>
+    <CatppuccinTabber />
+    <ProfileCard />
+</PageHost>
