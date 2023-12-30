@@ -1,0 +1,34 @@
+name: Deploy to SSH server
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        environment: SSH Deploy
+        steps:
+            - uses: actions/checkout@v2
+
+            - name: Set up SSH
+              run: |
+                mkdir -p ~/.ssh/
+                echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+                chmod 600 ~/.ssh/id_rsa
+                ssh-keyscan -t rsa ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+              env:
+                SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+
+            - name: Deploy over SSH
+              run: |
+                ssh ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} -p ${{ secrets.SSH_PORT }} "cd ${{ secrets.SSH_PATH }} && git pull origin main && ${{ secrets.DEPLOY_COMMAND }}"
+              
+# required secrets:
+# SSH_HOST
+# SSH_USER gh-actions
+# SSH_PORT 22
+# SSH_PATH ~aenri/stack/aenri.loveh.art
+# SSH_PRIVATE_KEY
+# DEPLOY_COMMAND sudo bash -c "docker compose down -v --remove-orphans && docker compose up -d --build --wait && ../update" 

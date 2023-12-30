@@ -34,7 +34,7 @@
         flex: 1;
         min-height: 100%;
         background: center 150px / 100% auto linear-gradient(180deg, #FFABAC 0%, #FF2BA7 99.94%) no-repeat,
-        center -180px / 120% auto url("banner.png") no-repeat;
+        center -180px / 120% auto url("/banner.png") no-repeat;
         border-radius: 50px;
 
     }
@@ -59,7 +59,7 @@
     #avatar-inner {
         width: 100px;
         height: 100px;
-        background: center / contain no-repeat url("avatar.png");
+        background: center / contain no-repeat url("/avatar.png");
         border-radius: 100px;
     }
     #name {

@@ -49,7 +49,6 @@
         />
     
     */
-    console.log("ProjectCard: ", name, description, icon, status, githubLink, codebergLink, discordLink);
 </script>
 
 <style lang="scss">

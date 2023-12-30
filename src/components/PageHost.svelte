@@ -21,8 +21,7 @@
 
         @media (min-width: 768px) {
             min-height: calc(100vh - 100px);
-            max-height: calc(100vh - 100px);
-            width: calc(100vw - 100px);
+            max-width: calc(100vw - 100px);
             padding: 50px;
 
         }
