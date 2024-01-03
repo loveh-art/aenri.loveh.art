@@ -23,9 +23,13 @@
 
         font-size: 20px;        
         font-weight: bold;
+
     }
     img {
         max-height: 25px;
+    }
+    a {
+        text-decoration: none;
     }
 </style>
 

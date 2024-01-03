@@ -1,0 +1,42 @@
+# LICENSE
+
+Unless otherwise stated, all content on this site and in
+this repository is licensed under the Creative Commons CC0 1.0 Universal License.
+
+The following items represent trademarks or copyrighted material
+and are  thus excempt from this repository's licensing:
+
+- static/avatar.png
+- static/banner.png
+- static/bluesky.svg ([Source](https://bsky.app/))
+- static/codeberg.svg ([Source](https://codeberg.org/))
+- static/discord.svg ([Source](https://discord.com/branding))
+- static/github.svg ([Source](https://github.com/logos))
+- static/keyoxide.png ([Source](https://keyoxide.org/))
+- static/lastfm.svg ([Source](https://www.last.fm/brand))
+- static/spotify.svg ([Source](https://developer.spotify.com/branding-guidelines/))
+- static/telegram.svg ([Source](https://telegram.org/brand_guidelines))
+- static/twitter.svg ([Source](https://about.twitter.com/en_us/company/brand-resources.html))
+- static/wetdry.world.png ([Source](https://wetdry.world/))
+- static/spotify-test-artwork.png
+
+The following items come from Google's Material Design Icons
+and are licensed under the Apache License Version 2.0:
+
+- static/no-download.svg
+- static/download.svg
+- static/web.svg
+
+The following items are direct derivatives of [surfbryce/beautiful-lyrics](https://github.com/surfbryce/beautiful-lyrics) 
+and thus licensed under the MIT License:
+
+- src/lib/beautiful-lyrics/*
+- src/components/parts/SpotifyContainer.svelte
+- src/components/parts/lyrics/*
+
+The following items are imported from Google Fonts, and despite appearing on
+the website, should not be considered part of this repository or its license:
+
+- [Google Fonts - Rubik](https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,700;1,400&display=swap)
+
+Any externally loaded content (such as images, fonts, etc.) is not covered by this license.

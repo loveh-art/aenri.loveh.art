@@ -1,8 +1,9 @@
 <script lang="ts">
-	import pallete from '$lib/colors';
+	import palette from '$lib/colors';
 	import ProjectCard from './parts/ProjectCard.svelte';
-
-	let activeTab = 'projects';
+	import Block from './parts/Block.svelte';
+	import Timestamp from './parts/Timestamp.svelte';
+	let activeTab = 'about';
 
 	let getSetActiveTab = (tabName: string) => {
 		return () => {
@@ -13,7 +14,7 @@
 
 <div
 	class="surface"
-	style="background-color:{pallete.colors.surface0.hex}; --text-color:{pallete.colors.text.hex};"
+	style="background-color:{palette.colors.surface0.hex}; --text-color:{palette.colors.text.hex};"
 >
 	<div id="navbar">
 		<div
@@ -43,9 +44,52 @@
 			</div>
 		</div>
 	</div>
-	<div id="rest">
+	<div id="rest"
+	class="{activeTab}"
+	
+	>
 		{#if activeTab === 'about'}
-			hi (about)
+			<!-- 
+
+			 -->
+			<Block>
+				<span>hi! im aenri, a kitty cat <br /> 
+					<Timestamp date="07-02-2005" content="that's been alive for %%!"/>
+					<!-- that's been alive for 18 years! -->
+				</span>
+				
+			</Block>
+			<Block>
+				I'm attending ISU for computer 
+				<br /> science and gender studies! 
+				<Block bg={palette.colors.surface2.hex}>
+					<span>I should be graduating 
+					<br /> <Timestamp date="06-20-2026" content="in the next %%!"/></span>
+				</Block>
+			</Block>
+			<Block>
+				<Block bg={palette.colors.surface2.hex}>
+					<span>i've been on estrogen <br /> for <Timestamp date="10-20-2023" content="the last %%!"/></span>
+				</Block>
+
+				and
+
+				<Block bg={palette.colors.surface2.hex}>
+					<span>i've been with my partners <br /> for <Timestamp date="05-29-2023" content="the last %%!"/></span>
+				</Block>
+			</Block>
+			<Block>
+				<span style="padding-bottom:10px;font-weight:bold">Site Links</span>
+				<Block bg={palette.colors.surface2.hex}>
+					nothing yet!
+					<!-- <span class="site-link"> my <a href="">opinions</a> </span>
+
+					<span class="site-link"> my <a href="">blog</a> </span>
+
+					<span class="site-link"> my <a href="">api status</a> </span> -->
+				</Block>
+			</Block>
+			 
 		{:else if activeTab === 'projects'}
 			<ProjectCard
 				name="Genesis"
@@ -164,15 +208,39 @@
 
 	#rest {
 		color: var(--text-color);
-		// display: flex;
-		// flex-flow: row wrap;
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
-		align-content: space-between;
-		padding: 25px;
-		gap: 25px;
-		justify-content: stretch;
-		column-count: 2;
+
+        &.projects {
+			display: grid;
+			grid-gap: 10px;
+			grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+			align-content: space-between;
+			padding: 25px;
+			gap: 25px;
+			justify-content: stretch;
+			column-count: 2;
+		}
+		&.about {
+			gap: 25px;
+
+			@media (max-width: 768px) {
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				padding:15px;
+			}
+			@media (min-width: 768px) {
+				display: grid;
+				grid-gap: 10px;
+				grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+				align-content: space-between;
+				justify-content: stretch;
+				column-count: 2;
+				padding: 25px;
+			}
+		}
+	}
+	.site-link, .site-link a {
+		// text-decoration: none;
+		color: var(--text-color);
 	}
 </style>
