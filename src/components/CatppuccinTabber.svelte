@@ -3,7 +3,7 @@
 	import ProjectCard from './parts/ProjectCard.svelte';
 	import Block from './parts/Block.svelte';
 	import Timestamp from './parts/Timestamp.svelte';
-	let activeTab = 'about';
+	let activeTab = 'projects';
 
 	let getSetActiveTab = (tabName: string) => {
 		return () => {
@@ -49,47 +49,11 @@
 	
 	>
 		{#if activeTab === 'about'}
-			<!-- 
-
-			 -->
-			<Block>
-				<span>hi! im aenri, a kitty cat <br /> 
-					<Timestamp date="07-02-2005" content="that's been alive for %%!"/>
-					<!-- that's been alive for 18 years! -->
-				</span>
-				
-			</Block>
-			<Block>
-				I'm attending ISU for computer 
-				<br /> science and gender studies! 
-				<Block bg={palette.colors.surface2.hex}>
-					<span>I should be graduating 
-					<br /> <Timestamp date="06-20-2026" content="in the next %%!"/></span>
-				</Block>
-			</Block>
-			<Block>
-				<Block bg={palette.colors.surface2.hex}>
-					<span>i've been on estrogen <br /> for <Timestamp date="10-20-2023" content="the last %%!"/></span>
-				</Block>
-
-				and
-
-				<Block bg={palette.colors.surface2.hex}>
-					<span>i've been with my partners <br /> for <Timestamp date="05-29-2023" content="the last %%!"/></span>
-				</Block>
-			</Block>
-			<Block>
-				<span style="padding-bottom:10px;font-weight:bold">Site Links</span>
-				<Block bg={palette.colors.surface2.hex}>
-					nothing yet!
-					<!-- <span class="site-link"> my <a href="">opinions</a> </span>
-
-					<span class="site-link"> my <a href="">blog</a> </span>
-
-					<span class="site-link"> my <a href="">api status</a> </span> -->
-				</Block>
-			</Block>
-			 
+		<Block>
+			This part of my site is under construction! 
+			<br />
+			Check back later &lt;3
+		</Block>
 		{:else if activeTab === 'projects'}
 			<ProjectCard
 				name="Genesis"
@@ -221,22 +185,11 @@
 		}
 		&.about {
 			gap: 25px;
-
-			@media (max-width: 768px) {
-				display: flex;
+			display: flex;
 				flex-direction: column;
 				align-items: center;
 				padding:15px;
-			}
-			@media (min-width: 768px) {
-				display: grid;
-				grid-gap: 10px;
-				grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
-				align-content: space-between;
-				justify-content: stretch;
-				column-count: 2;
-				padding: 25px;
-			}
+
 		}
 	}
 	.site-link, .site-link a {

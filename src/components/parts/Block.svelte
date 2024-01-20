@@ -23,6 +23,7 @@
 
         font-size: 20px;
         max-width: calc(100% - 80px);
+        text-align: center;
     }
 
     span {
